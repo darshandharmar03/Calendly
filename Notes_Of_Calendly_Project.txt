@@ -1,0 +1,56 @@
+Tech Stack 
+1. Express Js -> For Routing and Middlware 
+2. PgSQL -> ORM -> Prisma 
+3. Zod -> Type Validations 
+4. Typescript 
+*Type script will be installed as a devDependency because when we 
+productionise our code we will transpile this code from typescript to javascript 
+transpilation is a process with which you convert your code from one language to another language 
+ @types/express -> whatever imports for express you have you will get a 
+ corresponding typescript package you will get the all the types for it 
+
+Ways to execute TS code 
+1.convert TS -> JS  -> this would be the mechanism we will follow in our production can also be used in development 
+in this the code is alreday pre transpiled 
+in this you need to use TSC 
+in TSC it wil strictly validates your type saftey and will report syntax/ type error 
+2.directly execute TS code -> this would be the mechanism we will follow in development 
+in this -> you have to convert typescript code to js code on the fly everytime 
+in this just it will just run the code on the fly 
+for this we need some extra libraries or devDependencies which will ead to bloat up our code 
+in this you  need to use TSX 
+It skips type check for speed focused purley on execution 
+
+
+tsc -> will locally compile your project 
+tsx -> this typescript executor ..help you to execute code directly 
+
+
+tsconfig.json file defines the root of  a typescript project an specifies the compiler options, root files 
+and rules required to transpile your code 
+
+generally in production we willl expose two ports for checking whether the server is up or whether it is down and it will be always light weighted compared to one more active port 
+
+
+.ts vs .js 
+we have written app.js here , youcan think you should do that with .ts because you are creating a ts file
+and writting .js 
+the reason behind because 
+An import path can only be end with a '.ts' extension when 'allowImportingExtensions' is enabled to true in config.ts file 
+then you can do the import from .ts 
+but after setting 'allowImportingExtensions' to true there will be a coule of more failures this function of 
+'allowImportingExtensions' can only be used with no emit and emitDeclaration only 
+
+we are not doing this because in config you can see that module: "NodeNext"
+what is this NodeNext? 
+It specifically tells TypeScript to adapt to Node's dual-module world, where both ES Modules (import/export) and CommonJS (require) co-exist
+This changes how TypeScript generates your JavaScript files. Instead of forcing everything into one format (like traditional CommonJS or ESNext), TypeScript dynamically looks at your project's context to decide what to output
+
+
+.ENV -> is a dedicated variable that you shre across processes inside your OS 
+Its comes with a problem 
+it is dependent on underlying operating system it is different in Linux/ Mac and Window 
+                     |
+
+dotenv -> helps to resolve this problem 
+//This Dev script is going to help us start the server again and again for us 
