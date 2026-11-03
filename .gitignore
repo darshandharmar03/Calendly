@@ -1,4 +1,5 @@
 node_modules
 dist
-env.ts
+.env
 postman
+/generated/prisma

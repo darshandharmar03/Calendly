@@ -54,3 +54,31 @@ it is dependent on underlying operating system it is different in Linux/ Mac and
 
 dotenv -> helps to resolve this problem 
 //This Dev script is going to help us start the server again and again for us 
+
+
+ORM -> Object Relational Mapper  is for your RDBMS 
+ODM -> Object document Mapper is for your NoSQL 
+Both of them server the same purpose 
+
+The purpose is lets say i will feed in a programming language level code 
+like JavaScript, Java , Python 
+This ORM/ODM has a lot of logic writtend inside it, this ORM or ODM 
+takes the machines level code to a SQL like Code 
+SQL Code -> INSERT INTO User(id, name.....) Values(45, "Shalu",...)
+Machine Level Code -> new User(), User.create({....}), User.findAll()
+we will able to write a lot of typescript code under the hood ORM/ODM
+will convert the code to SQLish kind of code 
+Prisma Supports both being a ORM 
+For working with ORMS we need to install a separate corresponding DB driver 
+our ORM will use this DB driver 
+This DB driver is the middle layer between your ORM and Database 
+ORM will not be useful for very complex quiries and you have to also think 
+off your performance ... if you are building a very high performant application 
+ 
+What is Prisma client ? 
+Prisma client is a ORM's generated, type-safe query builder for node.js , 
+Bun and Deno applications 
+when you have to create any query you create it using prisma client 
+its query builder 
+
+API Gateway 
